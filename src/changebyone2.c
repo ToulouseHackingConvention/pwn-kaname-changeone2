@@ -12,12 +12,12 @@ int main() {
     setvbuf(stdout, NULL, _IONBF, 0);
     
     printf("Welcome in complaints center.\n\n"
-           "Please enter your message [4096 bits] : ");
+           "Please enter your message [4096 bytes] : ");
 
     read(STDIN_FILENO, buff, 4096);
 
-    printf("\nThanks for tapping your complaints.\n"
-           "An operator will read your message soon before drop it.\n\n"
+    printf("\nThanks for taping your complaints.\n"
+           "An operator may read your message or just ignore it.\n\n"
            "Have a good day");
 
 

